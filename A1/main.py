@@ -84,7 +84,7 @@ class SandwichMachine:
 sandwich_maker = SandwichMachine(resources)
 
 is_on = True
-
+##1 ##
 while is_on:
     choice = input("What would you like? (small/ medium/ large/ off/ report): ").lower()
 
