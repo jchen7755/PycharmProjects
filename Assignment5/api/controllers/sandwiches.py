@@ -9,10 +9,8 @@ from fastapi import Response, status
 from api.models import models
 
 
-# ==============================================================================
 # FUNCTION 1: CREATE
 # Purpose: Add a new sandwich record to the database
-# ==============================================================================
 
 # Step 1: Define the create function
 #         It takes a database session and the sandwich data as parameters
@@ -40,10 +38,9 @@ def create(db: Session, sandwich):
     return db_sandwich
 
 
-# ==============================================================================
 # FUNCTION 2: READ ALL
 # Purpose: Retrieve every sandwich record from the database
-# ==============================================================================
+
 
 # Step 1: Define the read_all function
 #         It only needs the database session as a parameter
@@ -54,10 +51,9 @@ def read_all(db: Session):
     return db.query(models.Sandwich).all()
 
 
-# ==============================================================================
 # FUNCTION 3: READ ONE
 # Purpose: Retrieve a single sandwich record by its ID
-# ==============================================================================
+
 
 # Step 1: Define the read_one function
 #         Takes the database session and the sandwich_id to look up
@@ -69,10 +65,10 @@ def read_one(db: Session, sandwich_id):
     return db.query(models.Sandwich).filter(models.Sandwich.id == sandwich_id).first()
 
 
-# ==============================================================================
+
 # FUNCTION 4: UPDATE
 # Purpose: Modify an existing sandwich record in the database
-# ==============================================================================
+
 
 # Step 1: Define the update function
 #         Takes the session, the sandwich_id to find, and the new sandwich data
@@ -97,10 +93,10 @@ def update(db: Session, sandwich_id, sandwich):
     return db_sandwich.first()
 
 
-# ==============================================================================
+
 # FUNCTION 5: DELETE
 # Purpose: Remove a sandwich record from the database
-# ==============================================================================
+
 
 # Step 1: Define the delete function
 #         Takes the database session and the sandwich_id to remove

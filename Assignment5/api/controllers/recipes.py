@@ -9,10 +9,10 @@ from fastapi import Response, status
 from api.models import models
 
 
-# ==============================================================================
+
 # FUNCTION 1: CREATE
 # Purpose: Add a new recipe record to the database
-# ==============================================================================
+
 
 # Step 1: Define the create function
 def create(db: Session, recipe):
@@ -39,10 +39,10 @@ def create(db: Session, recipe):
     return db_recipe
 
 
-# ==============================================================================
+
 # FUNCTION 2: READ ALL
 # Purpose: Retrieve every recipe record from the database
-# ==============================================================================
+
 
 # Step 1: Define the read_all function
 def read_all(db: Session):
@@ -51,10 +51,10 @@ def read_all(db: Session):
     return db.query(models.Recipe).all()
 
 
-# ==============================================================================
+
 # FUNCTION 3: READ ONE
 # Purpose: Retrieve a single recipe record by its ID
-# ==============================================================================
+
 
 # Step 1: Define the read_one function
 def read_one(db: Session, recipe_id):
@@ -63,10 +63,10 @@ def read_one(db: Session, recipe_id):
     return db.query(models.Recipe).filter(models.Recipe.id == recipe_id).first()
 
 
-# ==============================================================================
+
 # FUNCTION 4: UPDATE
 # Purpose: Modify an existing recipe record in the database
-# ==============================================================================
+
 
 # Step 1: Define the update function
 def update(db: Session, recipe_id, recipe):
@@ -87,10 +87,10 @@ def update(db: Session, recipe_id, recipe):
     return db_recipe.first()
 
 
-# ==============================================================================
+
 # FUNCTION 5: DELETE
 # Purpose: Remove a recipe record from the database
-# ==============================================================================
+
 
 # Step 1: Define the delete function
 def delete(db: Session, recipe_id):

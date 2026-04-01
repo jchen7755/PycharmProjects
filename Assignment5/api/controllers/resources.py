@@ -9,10 +9,10 @@ from fastapi import Response, status
 from api.models import models
 
 
-# ==============================================================================
+
 # FUNCTION 1: CREATE
 # Purpose: Add a new resource (ingredient) record to the database
-# ==============================================================================
+
 
 # Step 1: Define the create function
 #         Takes a database session and the resource data as parameters
@@ -38,10 +38,10 @@ def create(db: Session, resource):
     return db_resource
 
 
-# ==============================================================================
+
 # FUNCTION 2: READ ALL
 # Purpose: Retrieve every resource record from the database
-# ==============================================================================
+
 
 # Step 1: Define the read_all function
 def read_all(db: Session):
@@ -50,10 +50,10 @@ def read_all(db: Session):
     return db.query(models.Resource).all()
 
 
-# ==============================================================================
+
 # FUNCTION 3: READ ONE
 # Purpose: Retrieve a single resource record by its ID
-# ==============================================================================
+
 
 # Step 1: Define the read_one function
 def read_one(db: Session, resource_id):
@@ -62,10 +62,10 @@ def read_one(db: Session, resource_id):
     return db.query(models.Resource).filter(models.Resource.id == resource_id).first()
 
 
-# ==============================================================================
+
 # FUNCTION 4: UPDATE
 # Purpose: Modify an existing resource record in the database
-# ==============================================================================
+
 
 # Step 1: Define the update function
 def update(db: Session, resource_id, resource):
@@ -86,10 +86,10 @@ def update(db: Session, resource_id, resource):
     return db_resource.first()
 
 
-# ==============================================================================
+
 # FUNCTION 5: DELETE
 # Purpose: Remove a resource record from the database
-# ==============================================================================
+
 
 # Step 1: Define the delete function
 def delete(db: Session, resource_id):

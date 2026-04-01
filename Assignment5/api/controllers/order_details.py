@@ -9,10 +9,10 @@ from fastapi import Response, status
 from api.models import models
 
 
-# ==============================================================================
+
 # FUNCTION 1: CREATE
 # Purpose: Add a new order detail record to the database
-# ==============================================================================
+
 
 # Step 1: Define the create function
 def create(db: Session, order_detail):
@@ -39,10 +39,10 @@ def create(db: Session, order_detail):
     return db_order_detail
 
 
-# ==============================================================================
+
 # FUNCTION 2: READ ALL
 # Purpose: Retrieve every order detail record from the database
-# ==============================================================================
+
 
 # Step 1: Define the read_all function
 def read_all(db: Session):
@@ -51,10 +51,10 @@ def read_all(db: Session):
     return db.query(models.OrderDetail).all()
 
 
-# ==============================================================================
+
 # FUNCTION 3: READ ONE
 # Purpose: Retrieve a single order detail record by its ID
-# ==============================================================================
+
 
 # Step 1: Define the read_one function
 def read_one(db: Session, order_detail_id):
@@ -63,10 +63,10 @@ def read_one(db: Session, order_detail_id):
     return db.query(models.OrderDetail).filter(models.OrderDetail.id == order_detail_id).first()
 
 
-# ==============================================================================
+
 # FUNCTION 4: UPDATE
 # Purpose: Modify an existing order detail record in the database
-# ==============================================================================
+
 
 # Step 1: Define the update function
 def update(db: Session, order_detail_id, order_detail):
@@ -87,10 +87,10 @@ def update(db: Session, order_detail_id, order_detail):
     return db_order_detail.first()
 
 
-# ==============================================================================
+
 # FUNCTION 5: DELETE
 # Purpose: Remove an order detail record from the database
-# ==============================================================================
+
 
 # Step 1: Define the delete function
 def delete(db: Session, order_detail_id):
